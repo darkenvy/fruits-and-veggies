@@ -42,6 +42,13 @@ app.controller('MainCtrl', ['$scope', function($scope) {
       $scope.rightHidden[this.food] = false
     }
   }
+  $scope.isWrong = function(food, toCheck) {
+    if (toCheck == 0 && vegetables.indexOf(food) >= 0) {
+      return true;
+    } else if (toCheck == 1 && fruits.indexOf(food) >= 0) {
+      return true;
+    }
+  }
 }])
 
 // app.directive('foodItem', function() {

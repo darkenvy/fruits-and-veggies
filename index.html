@@ -14,7 +14,7 @@
             <h1>Fruit and Veggies</h1>
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="well" ng-repeat="food in fridge track by $index" ng-hide="leftHidden[food]">
+                    <div class="well" ng-repeat="food in fridge track by $index" ng-hide="leftHidden[food]" ng-class="{red: isWrong(food, 1) }">
                       {{ food }}
                       <button ng-click="right()">R</button>
                     </div>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="well" ng-repeat="food in fridge track by $index" ng-hide="rightHidden[food]">
+                    <div class="well" ng-repeat="food in fridge track by $index" ng-hide="rightHidden[food]" ng-class="{red: isWrong(food, 0) }">
                       <button ng-click="left()">L</button> {{ food }}
                     </div>
                 </div>
